@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="E:/Program Files/Git/ML_DL_W2V/MyWord2VEC_java_git/ExtendLib/fastjson-1.1.41.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/Program Files/Git/ML_DL_W2V/MyWord2VEC_java_git/ExtendLib/lucene-core-5.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files/Git/ML_DL_W2V/MyWord2VEC_java_git/ExtendLib/antlr4-4.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
