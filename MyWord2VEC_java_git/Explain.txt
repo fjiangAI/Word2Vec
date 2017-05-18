@@ -1,4 +1,2 @@
-这是根据网上给出的JAVA格式的Word2Vec的源码，加了一些注释和改进，并对有可能出现的问题做了分析和说明。
-但仍然有一些不懂，以后还要补充。
 This is based on the JAVA format of the Word2Vec format of the source code, plus a number of notes and improvements, and there may be a problem to do the analysis and description.
 But there are still some do not understand, but also to add.

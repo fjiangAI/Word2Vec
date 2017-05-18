@@ -1,2 +1,22 @@
 # Word2Vec
-Word2Vec's analysis and improvement
+这是对Word2Vec的源码的改进和解析。增添了我的一点理解和注释，并且完善了整个工程的条理性。使得fork下来就可以使用。
+
+主要包括有：
+对于word2vec源码的梳理和真正训练时遇到的问题，都在注释里。
+可用的功能有：
+
+1. 获取词向量
+2. 求相似词
+3. 获取句子向量
+4. 求两个句子的相似度
+
+额外的扩展库我也已经打包在ExtendLib下了，自己添加即可。
+
+推荐阅读的文献包括：Tomas Mikolov的一系列关于Word2vec的论文，主要包括：
+
+1. word2vec的前身基于神经网络的语言模型
+2. word2vec的两种模型的介绍
+3. word2vec的Skip-gram模型的改进
+4. word2vec在机器翻译上的应用
+5. word2vec的短语扩展
+6. word2vec的句子和段落、篇章的扩展。

@@ -15,46 +15,6 @@ import java.util.TreeSet;
 import com.ansj.vec.domain.WordEntry;
 
 public class Word2VEC {
-
-	public static void main(String[] args) throws IOException {
-
-		// Learn learn = new Learn();
-		// learn.learnFile(new File("library/xh.txt"));
-		// learn.saveModel(new File("library/javaSkip1"));
-
-		Word2VEC vec = new Word2VEC();
-		vec.loadJavaModel("library/javaSkip1");
-
-		// System.out.println("ä¸­å›½" + "\t" +
-		// Arrays.toString(vec.getWordVector("ä¸­å›½")));
-		// ;
-		// System.out.println("æ¯›æ³½ä¸œ" + "\t" +
-		// Arrays.toString(vec.getWordVector("æ¯›æ³½ä¸œ")));
-		// ;
-		// System.out.println("è¶³ç�ƒ" + "\t" +
-		// Arrays.toString(vec.getWordVector("è¶³ç�ƒ")));
-
-		// Word2VEC vec2 = new Word2VEC();
-		// vec2.loadGoogleModel("library/vectors.bin") ;
-		//
-		//
-		String str = "æ¯›æ³½ä¸œ";
-		long start = System.currentTimeMillis();
-		for (int i = 0; i < 100; i++) {
-			System.out.println(vec.distance(str));
-			;
-		}
-		System.out.println(System.currentTimeMillis() - start);
-
-		System.out.println(System.currentTimeMillis() - start);
-		// System.out.println(vec2.distance(str));
-		//
-		//
-		// //ç”·äºº å›½çŽ‹ å¥³äºº
-		// System.out.println(vec.analogy("é‚“å°�å¹³", "æ¯›æ³½ä¸œæ€�æƒ³", "æ¯›æ³½ä¸œ"));
-		// System.out.println(vec2.analogy("æ¯›æ³½ä¸œ", "æ¯›æ³½ä¸œæ€�æƒ³", "é‚“å°�å¹³"));
-	}
-
 	private HashMap<String, float[]> wordMap = new HashMap<String, float[]>();
 
 	private int words;
@@ -62,11 +22,11 @@ public class Word2VEC {
 	private int topNSize = 40;
 
 	/**
-	 * åŠ è½½æ¨¡åž‹
-	 * 
+	 * 这是加载谷歌模型的（也就是实用C语言训练出来的）
 	 * @param path
-	 *            æ¨¡åž‹çš„è·¯å¾„
+	 * 这是模型文件的路径。
 	 * @throws IOException
+	 * 这是异常。
 	 */
 	public void loadGoogleModel(String path) throws IOException {
 		DataInputStream dis = null;
@@ -76,9 +36,7 @@ public class Word2VEC {
 		try {
 			bis = new BufferedInputStream(new FileInputStream(path));
 			dis = new DataInputStream(bis);
-			// //è¯»å�–è¯�æ•°
 			words = Integer.parseInt(readString(dis));
-			// //å¤§å°�
 			size = Integer.parseInt(readString(dis));
 			String word;
 			float[] vectors = null;
@@ -107,10 +65,9 @@ public class Word2VEC {
 	}
 
 	/**
-	 * åŠ è½½æ¨¡åž‹
-	 * 
+	 * 这是加载java模型的（也就是这个程序训练出来的。）
 	 * @param path
-	 *            æ¨¡åž‹çš„è·¯å¾„
+	 * 这是java模型的文件路径。
 	 * @throws IOException
 	 */
 	public void loadJavaModel(String path) throws IOException {
@@ -146,8 +103,10 @@ public class Word2VEC {
 	private static final int MAX_SIZE = 50;
 
 	/**
-	 * è¿‘ä¹‰è¯�
-	 * 
+	 * 这是类比方法，即看出word0,word1和word2之间的关系
+	 * @param word0
+	 * @param word1
+	 * @param word2
 	 * @return
 	 */
 	public TreeSet<WordEntry> analogy(String word0, String word1, String word2) {
@@ -201,7 +160,13 @@ public class Word2VEC {
 		}
 
 	}
-
+	/**
+	 * 这是求一个词的最相似的集合。
+	 * @param queryWord
+	 * 这是要查询的词
+	 * @return
+	 * 返回的是一个结果集
+	 */
 	public Set<WordEntry> distance(String queryWord) {
 
 		float[] center = wordMap.get(queryWord);
@@ -232,7 +197,11 @@ public class Word2VEC {
 
 		return result;
 	}
-
+	/**
+	 * 这是查询相对于这一堆词的相似的词
+	 * @param words
+	 * @return
+	 */
 	public Set<WordEntry> distance(List<String> words) {
 
 		float[] center = null;
@@ -291,8 +260,7 @@ public class Word2VEC {
 	}
 
 	/**
-	 * å¾—åˆ°è¯�å�‘é‡�
-	 * 
+	 * 获得词向量
 	 * @param word
 	 * @return
 	 */

@@ -12,20 +12,12 @@ public class Word2VecTest {
     private static final File sportCorpusFile = new File("已分好词的训练语料.txt");
 
     public static void main(String[] args) throws IOException {
-        
-        
         //进行分词训练
-
         //Learn lean = new Learn() ;
-
         //lean.learnFile(sportCorpusFile) ;
     	//这里保存的是JAVA模型
         //lean.saveModel(new File("已训练好的模型.model")) ;
-
-
-
         //加载测试
-
         Word2VEC w2v = new Word2VEC() ;
         w2v.loadGoogleModel("这里是利用Google自己的源码跑出的模型.model") ; 
         Word2VEC w2v2 = new Word2VEC() ;

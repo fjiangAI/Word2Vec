@@ -10,7 +10,8 @@ import com.ansj.vec.domain.Neuron;
 /**
  * 构建Haffman编码树
  * @author ansj
- *目前尚未搞懂haffman树是用来干啥的。
+ * 目前知道了，Haffman树是用来构建Hierarchical Softmax。
+ * 根据词频来把高频词放到上面，这样高频词的长度就很短，极快的加速了训练过程。
  */
 public class Haffman {
     private int layerSize;
